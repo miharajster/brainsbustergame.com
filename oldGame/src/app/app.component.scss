@@ -1,0 +1,177 @@
+#brainBuster {
+  #appTop {
+    text-align: center;
+    #logo {
+      display: inline-block;
+      margin: 40px 0 50px;
+      width: calc(942px/2);
+      height: calc(481px/2);
+      background-image: url("../assets/logo_2.png"),
+      url("../assets/logo_1.png"),
+      url("../assets/logo_0.png");
+      background-repeat: no-repeat;
+      background-size: calc(942px/2), 189px 200px, calc(942px/2);
+      animation: logo 2s ease-in-out infinite;
+      background-position: center, 130px 20px, center;
+      &.small {
+        zoom: .6;
+      }
+    }
+  }
+  #appGame {
+    position: relative;
+    background-color: #870a0a;
+    border: 4px solid #870a0a;
+    .btn_wrapper {
+      background-color: #870a0a;
+      border-radius: 15px;
+      display: inline-block;
+      position: absolute;
+      margin: -35px auto;
+      left: calc(50% - 80px);
+      #start {
+        position: relative;
+      }
+    }
+    #game {
+      margin: 40px 0 50px;
+      display: grid;
+      justify-items: center;
+      color: #FFF;
+      line-height: 2;
+      .container {
+        text-align: center;
+        p {
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+        #score {
+          text-align: center;
+          span {
+            position: relative;
+            bottom: -22px;
+            color: #000;
+            background: #FFF;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+        }
+        #gameArea {
+          display: grid;
+          align-items: center;
+          grid-template-columns: 170px 60px 170px 60px auto;
+          text-align: center;
+          border: 5px solid #e1e1e1;
+          border-radius: 20px;
+          background: linear-gradient(180deg, rgba(153,153,153,1) 0%, rgba(131,131,131,1) 50%, rgba(153,153,153,1) 100%);
+          padding: 30px 10px 40px;
+          .number {
+            position: relative;
+            font-size: 140px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(180,180,180,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(164,164,164,1) 100%);;
+            border: 4px solid #000;
+            border-left: 6px solid #000;
+            border-right: 6px solid #000;
+            border-radius: 20px;
+            color: #292929;
+            line-height: 1;
+            height: 140px;
+            overflow: hidden;
+            .numberSlider {
+              position: relative;
+              transition: all 1s ease-in-out;
+            }
+            .correct {
+              font-size: 50px;
+              padding-top: 20px;
+              span {
+                background: #13dd4a;
+                color: #FFF;
+                display: inline-block;
+                font-size: 24px;
+                line-height: 1;
+                position: relative;
+                padding: 3px 10px;
+                border-radius: 10px;
+                top: -10px;
+              }
+            }
+            .wrong {
+              font-size: 50px;
+              padding-top: 20px;
+              span {
+                background: #dd1313;
+                color: #FFF;
+                display: inline-block;
+                font-size: 24px;
+                line-height: 1;
+                position: relative;
+                padding: 3px 10px;
+                border-radius: 10px;
+                top: -10px;
+              }
+            }
+          }
+          .operator {
+            color: #000;
+            font-size: 72px;
+            line-height: 2;
+          }
+          .result {
+            margin-top: 20px;
+          }
+        }
+        #runTest {
+          margin-top: -30px;
+          text-align: center;
+          #test {}
+          #reroll {
+            margin-left: 10px;
+          }
+        }
+        #log {
+          margin-top: 20px;
+          display: grid;
+          justify-content: center;
+          .mat-mdc-list {
+            max-width: 300px;
+            border: 1px solid #212121;
+            border-radius: 10px;
+            .mat-mdc-list-item {
+              line-height: 1;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #appBottom {
+    text-align: center;
+    #copyright {
+      color: #870a0a;
+      font-weight: 600;
+      font-size: 12px;
+      margin: 50px 0 40px;
+    }
+  }
+}
+
+@keyframes logo {
+  25% {
+    background-size: calc(942px/2), 199px 210px, calc(942px/2);
+    background-position: center, 125px 10px, center;
+  }
+  50% {
+    background-size: calc(942px/2), 205px 216px, calc(942px/2);
+    background-position: center, 119px 6px, center;
+  }
+  75% {
+    background-size: calc(942px/2), 219px 230px, calc(942px/2);
+    background-position: center, 112px 3px, center;
+  }
+}

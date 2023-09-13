@@ -1,0 +1,106 @@
+<div id="brainBuster">
+  <div id="appTop">
+    <div id="logo"
+         [ngClass]="{'small': step === 1}"></div>
+  </div>
+  <div id="appGame">
+    <div class="btn_wrapper"
+        *ngIf="step === 0">
+      <div id="start"
+           class="btn green"
+           (click)="step_one()">
+        <span>START</span>
+      </div>
+    </div>
+    <div id="game"
+         *ngIf="step === 1">
+      <div class="container">
+        <h1>Welcome to BRAIN BUSTER 2000!</h1>
+        <p>Add two numbers and write the result in the box next to the account. When you are sure of the result, press the
+          <button mat-fab extended >
+            <mat-icon>bolt</mat-icon>
+            TEST
+          </button> button.</p>
+        <p>Best of luck.</p>
+        <div id="score">
+          <span>Score: {{score}}</span>
+        </div>
+        <div id="gameArea">
+          <div class="number">
+            <div class="numberSlider"
+                 [style.top]="number_position_0">
+              <div
+                *ngFor="let number of number_array">
+                <div>{{number}}</div>
+              </div>
+              <div class="correct">
+                👑
+                <span>CORRECT!</span>
+              </div>
+              <div class="wrong">
+                🎃
+                <span>WRONG!</span>
+              </div>
+            </div>
+          </div>
+          <div class="operator">+</div>
+          <div class="number">
+            <div class="numberSlider"
+                 [style.top]="number_position_1">
+              <div *ngFor="let number of number_array">
+                {{number}}
+              </div>
+              <div class="correct">
+                👑
+                <span>CORRECT!</span>
+              </div>
+              <div class="wrong">
+                🎃
+                <span>WRONG!</span>
+              </div>
+            </div>
+          </div>
+          <div class="operator">=</div>
+          <div class="result">
+            <mat-form-field class="example-full-width">
+              <mat-label>Result</mat-label>
+              <input
+                class="user-input"
+                matInput
+                [(ngModel)]="user_input"
+                (keydown.enter)="run_test()">
+            </mat-form-field>
+          </div>
+        </div>
+        <div id="runTest">
+          <button
+            id="test"
+            mat-fab extended
+            (click)="run_test()">
+            <mat-icon>bolt</mat-icon>
+            TEST
+          </button>
+          <button
+            id="reroll"
+            mat-fab color="warn"
+            (click)="reroll()">
+            <mat-icon>sync</mat-icon>
+          </button>
+        </div>
+        <div
+          id="log"
+          *ngIf="log_out">
+          <mat-list role="list">
+            <div *ngFor="let line of log_out">
+              <mat-list-item role="listitem">{{line.question}}</mat-list-item>
+              <mat-list-item role="listitem">{{line.anwser}}</mat-list-item>
+            </div>
+          </mat-list>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="appBottom">
+    <div id="copyright">Made with ❤ in Slovenia</div>
+  </div>
+</div>
