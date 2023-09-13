@@ -1,5 +1,5 @@
 # BrainsBusterGame.com
-<img width="100%" src="https://raw.githubusercontent.com/miharajster/brainsbustergame.com/main/lib/learning_banner.jpg"/><br/><small>V 1.0.0</small>
+<img width="100%" src="https://raw.githubusercontent.com/miharajster/brainsbustergame.com/main/lib/banner.jpg"/><br/><small>V 1.0.0</small>
 
 Easy math game for kidds based on Angular.
 
